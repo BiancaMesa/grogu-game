@@ -11,7 +11,7 @@ function App() {
         <input className="inputName" type="text" name="" id="" placeholder="Escribe tu nombre"/>
 
         <section className="board">
-          <div className="cell"><div class="grogu">👣</div></div>
+          <div className="cell"><div className="grogu">👣</div></div>
           <div className="cell"></div>
           <div className="cell"></div>
           <div className="cell"></div>
