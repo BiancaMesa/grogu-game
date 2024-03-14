@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import '../scss/App.scss'; 
 
 function App() {
+const [diceValue, setDiceValue] = useState(0); // revisar si el valor incial del dado es un string vacio o 0 o null?
+const [groguPosition, setGroguPosition] = useState(0);
+const [remainingGoods, setRemainingGoods] = useState({cookies: 3, eggs: 3, frogs: 3}); 
+
   return (
     <>
       <header>
