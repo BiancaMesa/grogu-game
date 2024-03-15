@@ -1,32 +1,39 @@
+import Header from "../components/Header";
+import Board from "../components/Board";
 import { useState } from 'react';
 import '../scss/App.scss'; 
 
 function App() {
-const [diceValue, setDiceValue] = useState(0); // revisar si el valor incial del dado es un string vacio o 0 o null?
+const [diceValue, setDiceValue] = useState(null); 
 const [groguPosition, setGroguPosition] = useState(0);
-const [remainingGoods, setRemainingGoods] = useState({cookies: 3, eggs: 3, frogs: 3}); 
+// const [remainingGoods, setRemainingGoods] = useState({cookies: 3, eggs: 3, frogs: 3}); 
+const [cookies, setCookies] = useState(["🍪", "🍪", "🍪"]); 
+const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]); 
+const [frogs, setFrogs] = useState(["🐸", "🐸", "🐸"]); 
+const [gameState, setGameState] = useState("in progress");
+
+function handleClick () {
+  const randomNumber = Math.floor(Math.random() * 4)+1;
+  setDiceValue(randomNumber);
+  console.log(randomNumber); 
+
+  if(diceValue === 4) {
+    const newPosition = groguPosition +1; 
+    setGroguPosition(newPosition); 
+  }
+}
 
   return (
     <>
-      <header>
-        <h1 className="title">¡Cuidado con Grogu!</h1>
-      </header>
+      <Header/>
       <main className="page">
         <h3 className="subtitle">Introduce tu nombre para jugar</h3>
         <input className="inputName" type="text" name="" id="" placeholder="Escribe tu nombre"/>
 
-        <section className="board">
-          <div className="cell"><div className="grogu">👣</div></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-        </section>
+        <Board/>
 
         <section>
-          <button className="dice">Lanzar Dado</button>
+          <button onClick={handleClick} className="dice">Lanzar Dado</button>
           <div className="game-status">En curso</div>
         </section>
 
