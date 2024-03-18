@@ -1,5 +1,6 @@
-import Header from "../components/Header";
-import Board from "../components/Board";
+import Header from "./Header";
+import Board from "./Board";
+import Dice from "./Dice";
 import { useState } from 'react';
 import '../scss/App.scss'; 
 
@@ -12,15 +13,15 @@ const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]);
 const [frogs, setFrogs] = useState(["🐸", "🐸", "🐸"]); 
 const [gameState, setGameState] = useState("in progress");
 
-function handleClick () {
+function rollDice () {
   const randomNumber = Math.floor(Math.random() * 4)+1;
   setDiceValue(randomNumber);
   console.log(randomNumber); 
 
-  if(diceValue === 4) {
-    const newPosition = groguPosition +1; 
-    setGroguPosition(newPosition); 
-  }
+  // if(diceValue === 4) {
+  //   const newPosition = groguPosition +1; 
+  //   setGroguPosition(newPosition); 
+  // }
 }
 
   return (
@@ -33,7 +34,7 @@ function handleClick () {
         <Board/>
 
         <section>
-          <button onClick={handleClick} className="dice">Lanzar Dado</button>
+          <Dice handleDice={rollDice}/>
           <div className="game-status">En curso</div>
         </section>
 
