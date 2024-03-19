@@ -7,7 +7,6 @@ import '../scss/App.scss';
 function App() {
 const [diceValue, setDiceValue] = useState(null); 
 const [groguPosition, setGroguPosition] = useState(0);
-// const [remainingGoods, setRemainingGoods] = useState({cookies: 3, eggs: 3, frogs: 3}); 
 const [cookies, setCookies] = useState(["🍪", "🍪", "🍪"]); 
 const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]); 
 const [frogs, setFrogs] = useState(["🐸", "🐸", "🐸"]); 
@@ -18,10 +17,9 @@ function rollDice () {
   setDiceValue(randomNumber);
   console.log(randomNumber); 
 
-  // if(diceValue === 4) {
-  //   const newPosition = groguPosition +1; 
-  //   setGroguPosition(newPosition); 
-  // }
+  if(randomNumber === 4) {
+    setGroguPosition(groguPosition +1);
+  }
 }
 
   return (
@@ -31,7 +29,7 @@ function rollDice () {
         <h3 className="subtitle">Introduce tu nombre para jugar</h3>
         <input className="inputName" type="text" name="" id="" placeholder="Escribe tu nombre"/>
 
-        <Board/>
+        <Board groguPosition={groguPosition}/>
 
         <section>
           <Dice handleDice={rollDice}/>
