@@ -2,7 +2,7 @@ import Header from "./Header";
 import Form from "./Form";
 import Board from "./Board";
 import Dice from "./Dice";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/App.scss'; 
 
 function App() {
@@ -12,8 +12,6 @@ const [cookies, setCookies] = useState(["🍪", "🍪", "🍪"]);
 const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]); 
 const [frogs, setFrogs] = useState(["🐸", "🐸", "🐸"]); 
 const [gameState, setGameState] = useState("in progress");
-const [name, setName] = useState(""); 
-const [message, setMessage] = useState(""); 
 
 function rollDice () {
   const randomNumber = Math.floor(Math.random() * 4)+1;
@@ -25,6 +23,13 @@ function rollDice () {
     setMessage(`Grogu ha avanzado una casilla${name && `, ${name}`}`); 
   }
 }
+
+useEffect(() => {
+if (groguPosition ===6){
+  setGameState ('¡¡Grogu se ha comido el cargamento!! Has perdido.');
+}
+}, [groguPosition]);
+
 
   return (
     <>
