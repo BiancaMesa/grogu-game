@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Form from "./Form";
 import Board from "./Board";
 import Dice from "./Dice";
 import { useState } from 'react';
@@ -11,6 +12,8 @@ const [cookies, setCookies] = useState(["🍪", "🍪", "🍪"]);
 const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]); 
 const [frogs, setFrogs] = useState(["🐸", "🐸", "🐸"]); 
 const [gameState, setGameState] = useState("in progress");
+const [name, setName] = useState(""); 
+const [message, setMessage] = useState(""); 
 
 function rollDice () {
   const randomNumber = Math.floor(Math.random() * 4)+1;
@@ -19,17 +22,17 @@ function rollDice () {
 
   if(randomNumber === 4) {
     setGroguPosition(groguPosition +1);
+    setMessage(`Grogu ha avanzado una casilla${name && `, ${name}`}`); 
   }
 }
 
   return (
     <>
-      <Header/>
+      <Header name={name}/>
       <main className="page">
-        <h3 className="subtitle">Introduce tu nombre para jugar</h3>
-        <input className="inputName" type="text" name="" id="" placeholder="Escribe tu nombre"/>
+        <Form setName={setName} name={name}/>
 
-        <Board groguPosition={groguPosition}/>
+        <Board groguPosition={groguPosition} message={message} name={name}/>
 
         <section>
           <Dice handleDice={rollDice}/>

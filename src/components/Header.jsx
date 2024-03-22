@@ -1,9 +1,9 @@
 import "../scss/components/Header.scss";
 
-function Header () {
+function Header ({name}) {
     return (
         <header>
-            <h1 className="title">¡Cuidado con Grogu!</h1>
+            <h1 className="title">¡Cuidado con Grogu{name && `, ${name}`}!</h1>
         </header>
     ); 
 }
