@@ -1,0 +1,21 @@
+.footer {
+
+    display: flex;
+    justify-content:space-around;
+
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        text-align: center;
+        list-style: none;
+        text-decoration: none;
+        
+    }
+    
+    &__copy {
+      max-width: 60px;    
+    }
+   
+}

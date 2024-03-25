@@ -1,8 +1,11 @@
 import Header from "./Header";
-import Form from "./Form";
-import Board from "./Board";
-import Dice from "./Dice";
+
+import Footer from "./Footer";
+import Game from "./Game";
+import Instructions from "./Instructions";
+import Options from "./Options";
 import { useState, useEffect } from 'react';
+import {Route, Routes} from "react-router-dom";
 import '../scss/App.scss'; 
 
 function App() {
@@ -56,29 +59,14 @@ if (groguPosition ===6){
   return (
     <>
       <Header name={name}/>
-      <main className="page">
-        <Form setName={setName} name={name}/>
 
-        <Board groguPosition={groguPosition} message={message} name={name}/>
+      <Routes>
+        <Route path="/instructions" element={<Instructions />}/>
+        <Route path="/options" element={<Options/>}/>
+        <Route path="/game" element={<Game setName={setName} name={name} groguPosition={groguPosition} message={message} rollDice={rollDice} cookies={cookies} eggs={eggs} frogs={frogs} gameState={gameState}/>}/>
+      </Routes>
 
-        <section>
-          <Dice handleDice={rollDice}/>
-          <div className="game-status">{gameState}</div>
-        </section>
-
-        <section className="goods-container">
-          <div className="goods-item">{cookies}</div>
-        </section>
-        <section className="goods-container">
-          <div className="goods-item">{eggs}</div>
-        </section>
-        <section className="goods-container">
-          <div className="goods-item">{frogs}</div>
-        </section>
-        <section>
-          <button className="restart-button">Reiniciar Juego</button>
-        </section>
-      </main>
+      <Footer />
 
     </>
   )
