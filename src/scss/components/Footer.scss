@@ -1,17 +1,31 @@
 .footer {
 
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
+    gap: 20px; 
+    align-items: center;
+    padding-bottom: 20px; 
 
 
     &__menu {
         display: flex;
         flex-direction: row;
         justify-content:space-around;
-        text-align: center;
+        //text-align: center;
         list-style: none;
-        text-decoration: none;
+        gap: 20px; 
+
+      &--item {
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
         
+      }
+        
+    }
+
+    .footer__menu-link {
+      color: white;
     }
     
     &__copy {
@@ -19,3 +33,7 @@
     }
    
 }
+
+a:link { 
+  text-decoration: none; 
+} 
