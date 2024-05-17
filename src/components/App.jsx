@@ -1,12 +1,11 @@
 import Header from "./Header";
-
-import Footer from "./Footer";
-import Game from "./Game";
 import Instructions from "./Instructions";
-import Options from "./Options";
+import Game from "./Game";
 import { useState, useEffect } from 'react';
 import {Route, Routes} from "react-router-dom";
 import '../scss/App.scss'; 
+import FooterGame from "./FooterGame";
+import FooterLanding from "./FooterLanding";
 
 function App() {
 const [diceValue, setDiceValue] = useState(null); 
@@ -71,15 +70,25 @@ if (groguPosition === 6){
 
   return (
     <>
-      <Header name={name}/>
 
       <Routes>
-        <Route path="/instructions" element={<Instructions />}/>
-        <Route path="/options" element={<Options/>}/>
-        <Route path="/game" element={<Game setName={setName} name={name} groguPosition={groguPosition} message={message} rollDice={rollDice} cookies={cookies} eggs={eggs} frogs={frogs} gameState={gameState}/>}/>
-      </Routes>
+        <Route path="/" element={
+          <>
+            <Header name={name}/>
+            <FooterLanding />
+          </>
+        }/>
 
-      <Footer />
+        <Route path="/instructions" element={<Instructions /> }/>
+
+        <Route path="/game" element={
+          <>
+            <Header name={name}/>
+            <Game setName={setName} name={name} groguPosition={groguPosition} message={message} rollDice={rollDice} cookies={cookies} eggs={eggs} frogs={frogs} gameState={gameState}/>
+            <FooterGame />
+          </>
+        }/>
+      </Routes>
 
     </>
   )
