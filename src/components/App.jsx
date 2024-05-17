@@ -18,40 +18,53 @@ const [gameState, setGameState] = useState('');
 const [name, setName] = useState('');
 const [message, setMessage] = useState('');
 
-function rollDice () {
-  const randomNumber = Math.floor(Math.random() * 4)+1;
-  setDiceValue(randomNumber);
-  console.log(randomNumber); 
 
-  if(randomNumber === 4) {
-    setGroguPosition(groguPosition +1);
-    setMessage(`Grogu ha avanzado una casilla${name && `, ${name}`}`); 
-  }
-
-  if (randomNumber === 1 && cookies.length !== 0) {
-    const updatedCookies = cookies.slice(0, -1); 
-    setCookies(updatedCookies);
-    setMessage(`Has guardado una galleta!`);
-  }
-
-    if (randomNumber === 2 && eggs.length !== 0) {
-      const updatedEggs = eggs.slice(0, -1); 
-      setEggs(updatedEggs);
-      setMessage(`Has guardado un huevo!`);
+  function rollDice () {
+    const randomNumber = Math.floor(Math.random() * 4)+1;
+    setDiceValue(randomNumber);
+    console.log(randomNumber);
+    if(randomNumber === 4) {
+      setGroguPosition(groguPosition +1);
+      setMessage(`Grogu ha avanzado una casilla${name && `, ${name}`}`);
+    }
+    if (randomNumber === 1) {
+      if (cookies.length !== 0) {
+        setCookies(cookies.slice(1));
+        setCookies(updatedCookies);
+        setMessage(`Has guardado una galleta!`);
+      } else {
+        setMessage(`No quedan más galletas que guardar`);
+      }
     }
 
-    if (randomNumber === 3 && frogs.length !== 0) {
-      const updatedFrogs = frogs.slice(0, -1); 
-      setFrogs(updatedFrogs);
-      setMessage(`Has guardado una rana!`);
+      if (randomNumber === 2) {
+        if(eggs.length !== 0) {
+          const updatedEggs = eggs.slice(0, -1);
+          setEggs(updatedEggs);
+          setMessage(`Has guardado un huevo!`);
+        } else {
+          setMessage(`No quedan más huevos que guardar`);
+        }
+      }
+
+      if (randomNumber === 3) {
+        if(frogs.length !== 0){
+          const updatedFrogs = frogs.slice(0, -1);
+          setFrogs(updatedFrogs);
+          setMessage(`Has guardado una rana!`);
+        } else {
+          setMessage(`No quedan más ranas que guardar`);
+        }
+      }
     }
-  }
+  
 
 useEffect(() => {
-if (groguPosition ===6){
+if (groguPosition === 6){
   setGameState ('¡¡Grogu se ha comido el cargamento!! Has perdido.');
 } else if (cookies.length === 0 && eggs.length === 0 && frogs.length === 0){
   setGameState ('Enhorabuena, has ganado! Mando completa la misión!');
+  setMessage('');
 }
 }, [groguPosition, cookies, eggs, frogs]);
 
