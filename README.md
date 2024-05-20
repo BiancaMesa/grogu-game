@@ -23,7 +23,7 @@ npm
 **Installation**    
 Clone the repository and install the dependencies:
 
-git clone https://github.com/BiancaMesa/grogu-game.git
+git clone https://github.com/BiancaMesa/grogu-game.git     
 ```npm install```
 
 ## Running the Game     
