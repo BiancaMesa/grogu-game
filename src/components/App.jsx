@@ -68,6 +68,18 @@ if (groguPosition === 6){
 }, [groguPosition, cookies, eggs, frogs]);
 
 
+function resetGame () {
+  setDiceValue(null);
+  setGroguPosition(0);
+  setCookies(["🍪 ", "🍪 ", "🍪"]);
+  setEggs(["🥚 ", "🥚 ", "🥚"]);
+  setFrogs(["🐸 ", "🐸 ", "🐸"]);
+  setGameState('');
+  setName('');
+  setMessage('');
+};
+
+
   return (
     <>
 
@@ -84,7 +96,7 @@ if (groguPosition === 6){
         <Route path="/game" element={
           <>
             <Header name={name}/>
-            <Game setName={setName} name={name} groguPosition={groguPosition} message={message} rollDice={rollDice} cookies={cookies} eggs={eggs} frogs={frogs} gameState={gameState}/>
+            <Game setName={setName} name={name} groguPosition={groguPosition} message={message} rollDice={rollDice} cookies={cookies} eggs={eggs} frogs={frogs} gameState={gameState} handleResetGame={resetGame}/>
             <FooterGame />
           </>
         }/>
