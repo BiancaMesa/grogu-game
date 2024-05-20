@@ -9,12 +9,12 @@ function FooterLanding() {
     
             <li className="footer__menu--item">
               <NavLink to="/instructions" className="footer__menu-link active">
-                Instrucciones
+                Instructions
               </NavLink>
             </li>
             <li className="footer__menu--item">
               <NavLink to="/game" className="footer__menu-link">
-                Jugar
+                Play
               </NavLink>
             </li>
           </ul>

@@ -8,8 +8,8 @@ function Form({setName, name}) {
 
   return (
     <form className="form">
-         <h3 className="subtitle">Introduce tu nombre para jugar</h3>
-        <input className="inputName" type="text" name="" id="" placeholder="Escribe tu nombre" onChange={handleChangeName} value={name}/>
+         <h3 className="subtitle">Write your name here to get started</h3>
+        <input className="inputName" type="text" name="" id="" placeholder="Name" onChange={handleChangeName} value={name}/>
     </form>
   );
 }

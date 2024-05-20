@@ -9,12 +9,12 @@ function FooterGame() {
     
             <li className="footer__menu--item">
               <NavLink to="/" className="footer__menu-link active">
-                Inicio
+                Homepage
               </NavLink>
             </li>
             <li className="footer__menu--item">
               <NavLink to="/instructions" className="footer__menu-link">
-                Instrucciones
+                Instructions
               </NavLink>
             </li>
           </ul>

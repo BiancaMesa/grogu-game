@@ -26,7 +26,7 @@ function Game({setName, name, groguPosition, message, rollDice, cookies, eggs, f
           <div className="goods-item">{frogs}</div>
         </section>
         <section>
-          <button className="restart-button" onClick={handleResetGame}>Reiniciar Juego</button>
+          <button className="restart-button" onClick={handleResetGame}>Reset Game</button>
         </section>
       </main>
   );

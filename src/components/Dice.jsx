@@ -7,7 +7,7 @@ function Dice({handleDice}) {
 
   return (
     <>
-     <button onClick={handleClick} className="dice">Lanzar dado</button>
+     <button onClick={handleClick} className="dice">Roll Dice!</button>
     </>
   );
 }
