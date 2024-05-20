@@ -11,7 +11,7 @@ Website Link: https://biancamesa.github.io/grogu-game/
 😱 Lose if Grogu reaches the end of the path and devours your cargo.
 🏆 Win by gathering all the snacks before Grogu advances to the end.
 
-## 🚀 Getting Started      
+**🚀 Getting Started**  
 Ready to dive into the adventure? Follow these simple steps to get the game up and running on your machine.
 
 ## Prerequisites    
@@ -20,13 +20,13 @@ Make sure you have the following installed:
 Node.js (v14 or later)
 npm
 
-## Installation    
+**Installation**    
 Clone the repository and install the dependencies:
 
-git clone https://github.com/BiancaMesa/grogu-game.git
+git clone https://github.com/BiancaMesa/grogu-game.git     
 ```npm install```
 
-## Running the Game   
+## Running the Game     
 Start the development server:
 
 ```npm start```
@@ -48,13 +48,13 @@ If Grogu reaches the end, he wins and eats all the snacks. If you collect all th
 ## Restarting the Game     
 If you need a fresh start, simply click the "Reiniciar Juego" button to reset all the states and begin anew.
 
-## 🤝 Contributing     
+**🤝 Contributing**     
 Want to contribute to Grogu's adventure? Great! Feel free to fork the repository and submit a pull request. We welcome all improvements and new features.
 
 ## 📜 License     
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-## 💬 Feedback    
+**💬 Feedback**     
 Have questions, suggestions, or just want to share your high score? Reach out to us bbiancamesa@gmail.com & lejladzanko@gmail.com.
 
 # May the snacks be with you! 🍪🥚🐸 
