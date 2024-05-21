@@ -1,4 +1,15 @@
 .title {
     text-align: center;
-    margin-top: 50px; 
+    
+    @media (min-width: 468px){
+        margin-top: 200px;
+    }
+
+    @media (min-width: 768px){
+        margin-top: 10px;
+    }
+
+    @media (min-width: 1024px){
+        margin-top: 50px;
+    }
 }
