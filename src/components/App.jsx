@@ -28,7 +28,7 @@ const [message, setMessage] = useState('');
     }
     if (randomNumber === 1) {
       if (cookies.length !== 0) {
-        setCookies(cookies.slice(1));
+        const updatedCookies= cookies.slice(0, -1);
         setCookies(updatedCookies);
         setMessage(`Has guardado una galleta!`);
       } else {
